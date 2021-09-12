@@ -1,15 +1,10 @@
 """
 Title : 욕심쟁이 판다
-Link : https://www.icloud.com/
+Link : https://www.acmicpc.net/problem/1937
 """
 
-import sys, collections
+import sys
 input = sys.stdin.readline
-
-
-def dfs(i, j):
-    pass
-
 
 
 n = int(input())

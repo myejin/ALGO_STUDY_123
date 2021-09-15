@@ -21,7 +21,7 @@ for i in range(len(s) // 3):
     else:
         cards[type][num] = 1
 else:
-    print(13 - sum(cards['P']))
-    print(13 - sum(cards['K']))
-    print(13 - sum(cards['H']))
+    print(13 - sum(cards['P']), end=' ')
+    print(13 - sum(cards['K']), end=' ')
+    print(13 - sum(cards['H']), end=' ')
     print(13 - sum(cards['T']))

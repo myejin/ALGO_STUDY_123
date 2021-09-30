@@ -1,18 +1,11 @@
 N, num = input().split()
 N = int(N)
 dx, dy = map(int, input().split())  # 좌(-x) 우(+x) / 상(+y) 하(-y)
-a, b = 0, 0
 
-
-def get_ab(x, y, idx):
-    global N, num, a, b
-
-    if idx == N:
-        a, b = x, y
-        return
-
-    l = 2 ** (N - idx - 1)
-    k = num[idx]
+x, y = 0, 0
+for n in range(N):
+    l = 2 ** (N - n - 1)
+    k = num[n]
 
     if k == '1':
         y += l
@@ -22,19 +15,10 @@ def get_ab(x, y, idx):
         x += l
         y += l
 
-    get_ab(x, y, idx + 1)
-
-
-def solution():
-    global N, num, a, b
-
-    get_ab(0, 0, 0)
-
-    a, b = a - dy, b + dx
-    if not (0 <= a < 2 ** N and 0 <= b < 2 ** N):
-        print(-1)
-        return
-
+a, b = x - dy, y + dx
+if not (0 <= a < 2 ** N and 0 <= b < 2 ** N):
+    print(-1)
+else:
     answer = ''
     for n in range(N):
         l = 2 ** (N - n - 1)
@@ -53,7 +37,3 @@ def solution():
             b -= l
 
     print(answer[::])
-    return
-
-
-solution()
